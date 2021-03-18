@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:unexpected_lines_in_flutter/column_case_page.dart';
+import 'package:unexpected_lines_in_flutter/custom_multi_child_layout_case_page.dart';
 import 'package:unexpected_lines_in_flutter/row_case_page.dart';
 import 'package:unexpected_lines_in_flutter/stack_case_page.dart';
 
@@ -36,12 +37,15 @@ class HomePage extends StatelessWidget {
       return RowCasePage();
     } else if (c == Case.stack) {
       return StackCasePage();
+    } else if (c == Case.custom_multi_child_layout) {
+      return CustomMultiChildLayoutCasePage();
     }
+
     throw Exception('Unexpected case: ' + c.name());
   }
 }
 
-enum Case { column, row, stack }
+enum Case { column, row, stack, custom_multi_child_layout }
 
 extension ToString on Case {
   String name() {
